@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<sys/wait.h>
+int main()
+{
+pid_t pid;
+pid=fork();
+if(pid<0){
+fprintf(stderr,"fork failed");
+exit(-1);
+}
+else if(pid==0)
+{
+execlp("/bin//s","/s",NULL);
+}
+else{
+wait(NULL);
+printf("child complete");
+exit(0);
+}}
